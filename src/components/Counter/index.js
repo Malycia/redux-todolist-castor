@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import './counter.styl';
 
-const Counter = ({ count }) => {
+const Counter = ({ nbTasksNotDone }) => {
   let message = '';
-  switch (count) {
+  switch (nbTasksNotDone) {
     case 0:
       message = 'Aucune tâche';
       break;
@@ -15,7 +15,7 @@ const Counter = ({ count }) => {
       break;
 
     default:
-      message = `${count} tâches en cours`;
+      message = `${nbTasksNotDone} tâches en cours`;
   }
 
   return (
@@ -26,7 +26,7 @@ const Counter = ({ count }) => {
 };
 
 Counter.propTypes = {
-  count: PropTypes.number.isRequired,
+  nbTasksNotDone: PropTypes.number.isRequired,
 };
 
 export default Counter;
